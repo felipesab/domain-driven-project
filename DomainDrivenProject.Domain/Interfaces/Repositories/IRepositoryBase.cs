@@ -1,6 +1,6 @@
 ﻿using System.Collections.Generic;
 
-namespace DomainDrivenProject.Domain.Interfaces
+namespace DomainDrivenProject.Domain.Interfaces.Repositories
 {
     public interface IRepositoryBase<TEntity> where TEntity : class
     {

@@ -1,13 +1,21 @@
-﻿using System.Web.Mvc;
+﻿using AutoMapper;
+using DomainDrivenProject.Domain.Entities;
+using DomainDrivenProject.Infra.Data.Repositories;
+using DomainDrivenProject.MVC.ViewModels;
+using System.Collections.Generic;
+using System.Web.Mvc;
 
 namespace DomainDrivenProject.MVC.Controllers
 {
     public class ClientsController : Controller
     {
+        private readonly ClientRepository _clientRepository = new ClientRepository();
+
         // GET: Clients
         public ActionResult Index()
         {
-            return View();
+            var clientViewModel = Mapper.Map<IEnumerable<Client>, IEnumerable<ClientViewModel>>(_clientRepository.GetAll());
+            return View(clientViewModel);
         }
 
         // GET: Clients/Details/5
@@ -24,18 +32,18 @@ namespace DomainDrivenProject.MVC.Controllers
 
         // POST: Clients/Create
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        [ValidateAntiForgeryToken]
+        public ActionResult Create(ClientViewModel clientViewModel)
         {
-            try
+            if (ModelState.IsValid)
             {
-                // TODO: Add insert logic here
+                var client = Mapper.Map<ClientViewModel, Client>(clientViewModel);
+                _clientRepository.Add(client);
 
                 return RedirectToAction("Index");
             }
-            catch
-            {
-                return View();
-            }
+
+            return View(clientViewModel);
         }
 
         // GET: Clients/Edit/5

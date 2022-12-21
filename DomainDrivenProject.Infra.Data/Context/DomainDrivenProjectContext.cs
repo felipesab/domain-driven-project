@@ -36,7 +36,7 @@ namespace DomainDrivenProject.Infra.Data.Context
 
         public override int SaveChanges()
         {
-            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("DataCadastro") != null))
+            foreach (var entry in ChangeTracker.Entries().Where(entry => entry.Entity.GetType().GetProperty("RegistrationDate") != null))
             {
                 if (entry.State == EntityState.Added)
                 {
