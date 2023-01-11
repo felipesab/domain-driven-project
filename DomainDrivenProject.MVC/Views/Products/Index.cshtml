@@ -1,4 +1,4 @@
-﻿@model IEnumerable<DomainDrivenProject.MVC.ViewModels.ClientViewModel>
+﻿@model IEnumerable<DomainDrivenProject.MVC.ViewModels.ProductViewModel>
 
 @{
     ViewBag.Title = "Index";
@@ -9,22 +9,19 @@
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
-<p>
-    @Html.ActionLink("Special Clients", "Specials")
-</p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Name)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Surname)
+            @Html.DisplayNameFor(model => model.Price)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Email)
+            @Html.DisplayNameFor(model => model.Available)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Active)
+            @Html.DisplayNameFor(model => model.ClientId)
         </th>
         <th></th>
     </tr>
@@ -35,13 +32,13 @@
             @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Surname)
+            @Html.DisplayFor(modelItem => item.Price)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Email)
+            @Html.DisplayFor(modelItem => item.Available)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Active)
+            @Html.DisplayFor(modelItem => item.ClientId)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
