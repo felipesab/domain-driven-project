@@ -31,7 +31,19 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="AppServiceBase.cs" />
+    <Compile Include="ClientAppService.cs" />
+    <Compile Include="Interface\IAppServiceBase.cs" />
+    <Compile Include="Interface\IClientAppService.cs" />
+    <Compile Include="Interface\IProductAppService.cs" />
+    <Compile Include="ProductAppService.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DomainDrivenProject.Domain\DomainDrivenProject.Domain.csproj">
+      <Project>{32188231-0b52-43b3-bf17-9a9216e8524d}</Project>
+      <Name>DomainDrivenProject.Domain</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

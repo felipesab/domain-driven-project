@@ -1,4 +1,4 @@
-﻿using DomainDrivenProject.Domain.Interfaces;
+﻿using DomainDrivenProject.Domain.Interfaces.Repositories;
 using DomainDrivenProject.Infra.Data.Context;
 using System.Collections.Generic;
 using System.Data.Entity;

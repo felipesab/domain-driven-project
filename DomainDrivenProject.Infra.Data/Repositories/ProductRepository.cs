@@ -1,5 +1,5 @@
 ﻿using DomainDrivenProject.Domain.Entities;
-using DomainDrivenProject.Domain.Interfaces;
+using DomainDrivenProject.Domain.Interfaces.Repositories;
 using System.Collections.Generic;
 using System.Linq;
 

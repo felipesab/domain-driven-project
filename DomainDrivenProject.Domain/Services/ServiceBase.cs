@@ -12,35 +12,35 @@ namespace DomainDrivenProject.Domain.Services
         {
             _repository = repository;
         }
-
-        public void Add(TEntity entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Delete(TEntity entity)
-        {
-            throw new System.NotImplementedException();
-        }
-
-        public void Dispose()
-        {
-            throw new System.NotImplementedException();
-        }
-
         public IEnumerable<TEntity> GetAll()
         {
-            throw new System.NotImplementedException();
+            return _repository.GetAll();
         }
 
         public TEntity GetById(int id)
         {
-            throw new System.NotImplementedException();
+            return _repository.GetById(id);
         }
 
+        public void Add(TEntity entity)
+        {
+            _repository.Add(entity);
+        }
         public void Update(TEntity entity)
         {
-            throw new System.NotImplementedException();
+            _repository.Update(entity);
         }
+
+        public void Delete(TEntity entity)
+        {
+            _repository.Delete(entity);
+        }
+
+        public void Dispose()
+        {
+            _repository.Dispose();
+        }
+
+
     }
 }
